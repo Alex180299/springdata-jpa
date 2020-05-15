@@ -22,10 +22,20 @@ public class State implements Serializable {
     @OneToMany(mappedBy = "state", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<School> schools;
 
+    /**
+     * Constructor vacio
+     */
     public State(){
         schools = new ArrayList<School>();
     }
 
+    /**
+     * Constructor con todos los atributos como parámetro
+     * @param id Id de la escuela (Por defecto la base lo asigna)
+     * @param name Nombre de la escuela
+     * @param country País a donde pertenece el estado
+     * @param code Codigo del estado
+     */
     public State(Long id, String name, String country, String code) {
         this.id = id;
         this.name = name;

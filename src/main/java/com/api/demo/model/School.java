@@ -19,8 +19,18 @@ public class School implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private State state;
 
+    /**
+     * Constructor vacío
+     */
     public School(){}
 
+    /**
+     * Constructor con todos los atributos como parámetro
+     * @param id Id de la escuela (Por defecto la base lo asigna)
+     * @param name Nombre de la escuela
+     * @param state Estado donde se encuentra la escuela
+     * @param website Sitio web de la escuela
+     */
     public School(Long id, String name, String website, State state) {
         this.id = id;
         this.name = name;

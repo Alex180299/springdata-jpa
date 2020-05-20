@@ -16,7 +16,7 @@ public class School implements Serializable {
     private String name;
     private String website;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     private State state;
 
     /**

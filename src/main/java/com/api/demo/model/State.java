@@ -19,7 +19,7 @@ public class State implements Serializable {
     private String country;
     private String code;
 
-    @OneToMany(mappedBy = "state", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "state", fetch = FetchType.LAZY)
     private List<School> schools;
 
     /**

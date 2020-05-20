@@ -29,16 +29,17 @@ public class SchoolController {
      */
     @GetMapping("/schools")
     public List<School> getAllSchools(){
-        return schoolService.findAll()
-                .stream()
-                .map(s -> {
-                    School school = new School();
-                    school.setName(s.getName());
-                    school.setId(s.getId());
-                    school.setWebsite(s.getWebsite());
-                    return school;
-                })
-                .collect(Collectors.toList());
+//        return schoolService.findAll()
+//                .stream()
+//                .map(s -> {
+//                    School school = new School();
+//                    school.setName(s.getName());
+//                    school.setId(s.getId());
+//                    school.setWebsite(s.getWebsite());
+//                    return school;
+//                })
+//                .collect(Collectors.toList());
+        return schoolService.findAll();
     }
 
     /**
@@ -70,4 +71,13 @@ public class SchoolController {
         return "{ message: School " + school.getName() + " success inserted }";
     }
 
+    /**
+     * Método para introducir una escuela
+     * @param schoolParam Entidad con la información de la escuela para guardarla en la base
+     * @return Un string con el mensaje de inserción exitosa
+     */
+    @PostMapping("/api/version")
+    public String getVersion() {
+        return "Version: 1.0.0.0";
+    }
 }

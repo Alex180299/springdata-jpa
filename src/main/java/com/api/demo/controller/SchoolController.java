@@ -49,7 +49,13 @@ public class SchoolController {
      */
     @GetMapping("/school/{id}")
     public School getSchoolById(@PathVariable Long id){
-        return schoolService.findById(id);
+        School school = new School();
+        School schoolDb = schoolService.findById(id);
+
+        school.setId(schoolDb.getId());
+        school.setWebsite(schoolDb.getWebsite());
+        school.setName(school.getName());
+        return school;
     }
 
     /**
@@ -60,6 +66,7 @@ public class SchoolController {
     @PostMapping("/school")
     public String insertSchool(@RequestParam String schoolParam) {
         School school = null;
+        //objectMapper = new ObjectMapper();
 
         try{
             school = objectMapper.readValue(schoolParam, School.class);
@@ -72,12 +79,11 @@ public class SchoolController {
     }
 
     /**
-     * Método para introducir una escuela
-     * @param schoolParam Entidad con la información de la escuela para guardarla en la base
-     * @return Un string con el mensaje de inserción exitosa
+     * Método para obtener la version de la api
+     * @return Un string con la version de la api
      */
-    @PostMapping("/api/version")
+    @GetMapping("/api/version")
     public String getVersion() {
-        return "Version: 1.0.0.0";
+        return "{Version: 1.0.0.0}";
     }
 }

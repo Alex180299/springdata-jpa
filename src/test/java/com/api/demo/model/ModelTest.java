@@ -11,9 +11,9 @@ public interface ModelTest {
 //        System.out.println("Starting the tests");
 //    }
 
-    @BeforeEach
-    default void beforeEachMethod(TestInfo testInfo, RepetitionInfo repetitionInfo){
-        System.out.println("Starting new test repetition: " + repetitionInfo + " on method: " + testInfo.getDisplayName());
-    }
+//    @BeforeEach
+//    default void beforeEachMethod(TestInfo testInfo, RepetitionInfo repetitionInfo){
+//        System.out.println("Starting new test repetition: " + repetitionInfo + " on method: " + testInfo.getDisplayName());
+//    }
 
 }

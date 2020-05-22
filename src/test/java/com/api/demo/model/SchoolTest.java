@@ -50,6 +50,9 @@ class SchoolTest implements ModelTest {
 
             List<State> stateList;
 
+            //@BeforeAll
+
+
             @BeforeEach
             void insert(){
                 stateList = stateRepository.findAll();
